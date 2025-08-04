@@ -23,6 +23,7 @@ const Navbar = () => {
     <nav className="p-4 flex items-center justify-between">
       {/* LEFT */}
       <SidebarTrigger />
+      
       {/* RIGHT */}
       <div className="flex items-center gap-4">
         <Link href="/">Dashboard</Link>
