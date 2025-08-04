@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 import { LogOut, Moon, Settings, Sun, User } from "lucide-react";
 import Link from "next/link";
 
@@ -18,12 +18,17 @@ import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
+  const { toggleSidebar } = useSidebar();
 
   return (
     <nav className="p-4 flex items-center justify-between">
       {/* LEFT */}
       <SidebarTrigger />
-      
+      {/* <Button
+        variant="outline"
+        onClick={toggleSidebar}
+      >Custom Button</Button> */}
+
       {/* RIGHT */}
       <div className="flex items-center gap-4">
         <Link href="/">Dashboard</Link>
