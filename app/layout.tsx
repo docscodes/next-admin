@@ -1,3 +1,5 @@
+import Navbar from "@/components/ui/Navbar";
+import Sidebar from "@/components/ui/Sidebar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -24,10 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}>
+        <Sidebar />
+        <main className="w-full">
+          <Navbar />
+          <div className="px-4">{children}</div>
+        </main>
       </body>
     </html>
   );
