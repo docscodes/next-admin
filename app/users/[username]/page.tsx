@@ -1,4 +1,5 @@
 import CardList from "@/components/CardList";
+import EditUser from "@/components/EditUser";
 import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
@@ -108,7 +109,7 @@ const SingleUserPage = () => {
                 <SheetTrigger asChild>
                   <Button>Edit User</Button>
                 </SheetTrigger>
-                {/* <EditUser /> */}
+                <EditUser />
               </Sheet>
             </div>
             <div className="space-y-4 mt-4">
