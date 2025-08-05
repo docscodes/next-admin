@@ -5,6 +5,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,6 +24,23 @@ export type Payment = {
 };
 
 export const columns: ColumnDef<Payment>[] = [
+  {
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        checked={
+          table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        checked={row.getIsSelected()}
+      />
+    ),
+  },
   {
     accessorKey: "username",
     header: "Username",
